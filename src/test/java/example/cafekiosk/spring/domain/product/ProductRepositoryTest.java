@@ -14,6 +14,7 @@ import static example.cafekiosk.spring.domain.product.ProductType.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.groups.Tuple.tuple;
 
+//@DataJpaTest는 Transactional이 달려있음. data에 Transactional 달면 rollback됨
 @DataJpaTest //JPA 관련 빈들만
 @ActiveProfiles("test")
 public class ProductRepositoryTest {
