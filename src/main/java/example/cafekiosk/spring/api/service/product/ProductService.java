@@ -1,5 +1,6 @@
 package example.cafekiosk.spring.api.service.product;
 
+import example.cafekiosk.spring.api.controller.product.dto.request.ProductCreateRequest;
 import example.cafekiosk.spring.api.service.product.response.ProductResponse;
 import example.cafekiosk.spring.domain.product.ProductRepository;
 import lombok.RequiredArgsConstructor;
@@ -22,5 +23,9 @@ public class ProductService {
     }
 
 
+    public ProductResponse createProduct(ProductCreateRequest request) {
+        String latestProductNumber = productRepository.findLatestProductNumber();
+        return null;
 
+    }
 }
