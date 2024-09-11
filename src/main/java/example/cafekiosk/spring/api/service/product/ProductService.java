@@ -1,6 +1,7 @@
 package example.cafekiosk.spring.api.service.product;
 
 import example.cafekiosk.spring.api.controller.product.dto.request.ProductCreateRequest;
+import example.cafekiosk.spring.api.service.product.request.ProductCreateServiceRequest;
 import example.cafekiosk.spring.api.service.product.response.ProductResponse;
 import example.cafekiosk.spring.domain.product.Product;
 import example.cafekiosk.spring.domain.product.ProductRepository;
@@ -35,7 +36,7 @@ public class ProductService {
     // 동시성 이슈 -> synchronized, redis lock, JPA Optimistic Lock ...
     //혹은 아예 Unique value 부여 ex: UUID
     @Transactional
-    public ProductResponse createProduct(ProductCreateRequest request) {
+    public ProductResponse createProduct(ProductCreateServiceRequest request) {
         String nextProductNumber = createNextProductNumber();
 
         Product product = request.toEntity(nextProductNumber);

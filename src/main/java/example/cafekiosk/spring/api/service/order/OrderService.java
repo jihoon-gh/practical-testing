@@ -1,6 +1,7 @@
 package example.cafekiosk.spring.api.service.order;
 
 import example.cafekiosk.spring.api.controller.order.request.OrderCreateRequest;
+import example.cafekiosk.spring.api.service.order.request.OrderCreateServiceRequest;
 import example.cafekiosk.spring.api.service.order.response.OrderResponse;
 import example.cafekiosk.spring.domain.order.Order;
 import example.cafekiosk.spring.domain.order.OrderRepository;
@@ -28,7 +29,7 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final StockRepository stockRepository;
 
-    public OrderResponse createOrder(OrderCreateRequest request, LocalDateTime registeredDateTime) {
+    public OrderResponse createOrder(OrderCreateServiceRequest request, LocalDateTime registeredDateTime) {
         List<String> productNumbers = request.getProductNumbers();
         List<Product> products = findProductsBy(productNumbers);
 
